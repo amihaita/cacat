@@ -8,13 +8,13 @@ reprsec = cnp[0]
 maxziluna = {1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31}
 
 
-def checklcnp(cnp):
-    if len(cnp) != 13:
+def checklcnp(param):
+    if len(param) != 13:
         exit("Lungime CNP incorectă, CNP trebuie să aibă 13 caractere!")
 checklcnp(cnp)
 
 
-def checkluna(cnp):
+def checkluna(param):
     if lunacnp not in range(1, 13):
         exit("Caracterele 4 și 5 incorecte! Luna nu este corectă, anul are 12 luni!")
 checkluna(cnp)
@@ -23,12 +23,12 @@ checkluna(cnp)
 def checkzi(param):
     if zicnp not in range(1, 32):
         exit("Caracterele 6 și 7 incorecte! Lunile anului pot avea maxim 31 de zile.")
-    if zicnp not in range(1,maxziluna[lunacnp]+1):
+    if zicnp not in range(1, maxziluna[lunacnp]+1):
         print("Ziua nu este corectă!")
 checkzi(cnp)
 
 
-def checksex(cnp):
+def checksex(param):
     if sexnum == 0:
         print("CNP nu poate să începă cu 0")
     elif sexnum in [1, 3, 5, 7]:
@@ -49,7 +49,7 @@ def checkan(param):
             secol = 18
         elif int(reprsec) in range(5, 7):
             secol = 20
-        print("Persoana născută în %02d.%02d.%s%s" %(zicnp, lunacnp, secol, ancnp))
+        print("Persoana născută în %02d.%02d.%s%s" % (zicnp, lunacnp, secol, ancnp))
         return secol
     except NameError:
         print("Secvența ce conține data nașterii este incorectă!")
