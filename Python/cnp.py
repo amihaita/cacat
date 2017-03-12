@@ -1,5 +1,10 @@
 cnp = input("Introduceți CNP: ")
+try:
+    listcnp = list(map(int,cnp))
+except ValueError:
+    exit("Nu ati introdus cifre! CNP conține doar cifre!")
 comparednum = "279146358279"
+listcn = list(map(int,comparednum))
 comparedcnp = cnp[0:13]
 zicnp = int(cnp[5:7])
 lunacnp = int(cnp[3:5])
@@ -57,14 +62,17 @@ def checkan(param):
 checkan(cnp)
 
 
-def control(cnp):
+def control(param):
     total = 0
-    rez = [x * y for x, y in zip(comparednum, comparedcnp)]
+    rez = [x * y for x, y in zip(listcn, listcnp)]
     for i in range(len(rez)):
         total = total + rez[i]
-    sc = total%11
+    sc = total % 11
     if sc == 10:
         sc -= 9
-print(sc)
+    print(sc)
+    print(cnp[12])
+    if sc != int(cnp[12]):
+        print("CNP INCORECT!!! Suma de control nu corespunde!")
+control(cnp)
 
-print("Persoana s-a născut în secolul %s" % (int(secol + 1)))
