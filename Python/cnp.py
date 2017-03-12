@@ -1,5 +1,6 @@
 cnp = input("Introduceți CNP: ")
 comparednum = "279146358279"
+comparedcnp = cnp[0:13]
 zicnp = int(cnp[5:7])
 lunacnp = int(cnp[3:5])
 ancnp = int(cnp[1:3])
@@ -54,4 +55,16 @@ def checkan(param):
     except NameError:
         print("Secvența ce conține data nașterii este incorectă!")
 checkan(cnp)
+
+
+def control(cnp):
+    total = 0
+    rez = [x * y for x, y in zip(comparednum, comparedcnp)]
+    for i in range(len(rez)):
+        total = total + rez[i]
+    sc = total%11
+    if sc == 10:
+        sc -= 9
+print(sc)
+
 print("Persoana s-a născut în secolul %s" % (int(secol + 1)))
