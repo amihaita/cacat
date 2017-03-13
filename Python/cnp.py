@@ -54,7 +54,7 @@ def checkan(cnp):
         an = int(str(secol) + cnp[1:3])
         return secol+1
     except NameError:
-        exit("Cifra corespunzătoare pentru secolul nașterii este incorectă!")
+        exit("Cifra corespunzătoare pentru secol este incorectă!")
 
 
 
@@ -95,17 +95,17 @@ def control(cnp):
     else:
         mesaj = "CNP CORECT!!! Suma de control corespunde!"
     return mesaj
-
-print("Verificare lungime CNP: ...")
-print(checklcnp(cnp))
-print("Verificare secvență sex: ...")
-print(checksex(cnp))
-print("Verificare secol dată naștere: ...")
-print(checkan(cnp))
-print("Verificare lună naștere: ...")
-print(checkluna(cnp))
-print("Verificare zi naștere: ...")
-print(checkzi(cnp))
-print(checkregiune(cnp))
-print(control(cnp))
-print("Persoana născută în %02d.%02d.%d" % (zicnp, lunacnp, an))
+def verifica(cnp):
+    print("Verificare lungime CNP: ...")
+    print(checklcnp(cnp))
+    print("Verificare secvență sex: ...")
+    print(checksex(cnp))
+    print("Verificare secol dată naștere: ...")
+    print(checkan(cnp))
+    print("Verificare lună naștere: ...")
+    print(checkluna(cnp))
+    print("Verificare zi naștere: ...")
+    print(checkzi(cnp))
+    print(checkregiune(cnp))
+    print(control(cnp))
+    print("Persoana născută în %02d.%02d.%d" % (zicnp, lunacnp, an))
