@@ -109,3 +109,4 @@ def verifica(cnp):
     print(checkregiune(cnp))
     print(control(cnp))
     print("Persoana născută în %02d.%02d.%d" % (zicnp, lunacnp, an))
+verifica(cnp)
